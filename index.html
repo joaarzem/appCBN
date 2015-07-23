@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="format-detection" content="telephone=no" />
+            <meta name="msapplication-tap-highlight" content="no" />
+            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+            <link rel="stylesheet" type="text/css" href="css/index.css" />
+            <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+            <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.css" />
+            <title>CBN App</title>
+        </head>
+        <body>
+            <div class="app">
+                <div data-role="page">
+                    <div data-role="header" data-theme="c">
+                        <h1><img src="img/logo2.png" width="130" alt=""></h1>
+                    </div><!-- /header -->
+                    <div role="main" class="ui-content">
+                        <h3 style="text-align: center">Bienvenido a la APP de CBN</h3>
+                        <p style="text-align: center">Ingrese sus datos</p>
+                        <label for="txt-email">Legajo</label>
+                        <input type="text" name="txt-email" id="txt-email" value="">
+                        <label for="txt-password">Contraseña</label>
+                        <input type="password" name="txt-password" id="txt-password" value="">
+                        <fieldset data-role="controlgroup">
+                            <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+                            <label for="chck-rememberme">Mantener abierta la aplicación</label>
+                        </fieldset>
+                        <a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Entrar</a>
+                        <p class="mc-top-margin-1-5"><a href="begin-password-reset.html">No puedo ingresar a mi cuenta</a></p>
+                        <div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
+                            <div role="main" class="ui-content">
+                                <h3 class="mc-text-danger">Error al ingresar</h3>
+                                <p>Verifique sus credenciales</p>
+                                <div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">Ok</a></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <script type="text/javascript" src="cordova.js"></script>
+            <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+            <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
+        </body>
+    </html>
