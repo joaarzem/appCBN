@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 	var datosUsuario = $("#txt-number").val()
 	var datosPassword = $("#txt-password").val()
 	
-	archivoValidacion = "https://www.cbn.com.bo/webpedidos/cbnapp/validacion_de_datos.php?jsoncallback=?"
+	archivoValidacion = "https://eventos.cbn.bo/cbnapp/validacion_de_datos.php?jsoncallback=?"
 	$.getJSON( archivoValidacion, { usuario:datosUsuario ,password:datosPassword})
 	.done(function(respuestaServer) {
 		
