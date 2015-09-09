@@ -1,65 +1,267 @@
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8" />
-            <meta name="format-detection" content="telephone=no" />
-            <meta name="msapplication-tap-highlight" content="no" />
-            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
-            <link href="css/themes/1/conf-room1.min.css" rel="stylesheet" />
-            <link href="css/themes/1/jquery.mobile.icons.min.css" rel="stylesheet" />
-            <link rel="stylesheet" type="text/css" href="css/index.css" />
-            <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
-            <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.css" />
-            <title>CBN App</title>
-        </head>
-        <body>
-            <div class="app">
-                <div data-role="page">
-                    <div data-role="header" data-theme="c">
-                        <h1><img src="img/logo2.png" width="130" alt=""></h1>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CBN APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/themes/1/conf-room1.min.css" rel="stylesheet" />
+    <link href="css/themes/1/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="lib/jqm/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <script src="lib/jquery/jquery-2.1.4.min.js"></script>
+    <script src="lib/jqm/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="page-index">
+        <div data-role="header" data-theme="a">
+            <h1><img src="img/logo2.png" width="130" alt=""></h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 class="mc-text-center">Bienvenido a la APP de CBN!</h2>
+            <p class="mc-top-margin-1-5"><b>Usuario Existente</b></p>
+            <a href="#page-signin" class="ui-btn ui-btn-b ui-corner-all">Entrar</a>
+            <p class="mc-top-margin-1-5"><b>¿Primera Vez en la Aplicación?</b></p>
+            <a href="sign-up.html" class="ui-btn ui-btn-b ui-corner-all">Registrarte</a>
+            <p></p>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <div data-role="page" id="page-signin">
+        <div data-role="header" data-theme="c">
+            <a href="#page-index" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1><img src="img/logo2.png" width="130" alt=""></h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Ingreso</h3>
+            <div id="ctn-err" class="bi-invisible"></div>
+            <label for="txt-email">Legajo</label>
+            <input type="text" name="txt-email" id="txt-email" value="">
+            <label for="txt-password">Contraseña</label>
+            <input type="password" name="txt-password" id="txt-password" value="">
+            <fieldset data-role="controlgroup">
+                <input type="checkbox" name="chck-rememberme" id="chck-rememberme">
+                <label for="chck-rememberme">Mantener abierta la aplicación</label>
+            </fieldset>
+            <a data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Entrar</a>
+            <p class="mc-top-margin-1-5"><a href="begin-password-reset.html">¿No puede Ingresar?</a></p>
+            <div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
+                <div role="main" class="ui-content">
+                    <h3 class="mc-text-danger">Error al entrar</h3>
+                    <p>¿Están correctos los datos?</p>
+                    <div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">OK</a></div>
+                </div>
+            </div>
+        </div><!-- /content -->
+    </div>
+    <div data-role="page" id="page-main-menu">
+        <div data-role="header" data-theme="c">
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            <!-- <a href="#" data-slidemenu="#slidemenu" data-slideopen="false" data-icon="smico" data-corners="false" data-iconpos="notext">Menu</a> -->
+            <h1><img src="img/logo2.png" width="130" alt=""></h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 id="nombreUsuario" class="mc-text-center"></h2>
+            <p class="mc-text-center">Bienvenido a People APP, el sitio donde encontrarás toda la información necesaria para estar conectad@ con CBN.</p>
+            <div id="owl-demo" class="owl-carousel owl-theme">
+
+                <div class="item"><img src="img/slider/home1.jpg" alt="The Last of us"></div>
+
+            </div>
+            <div class="content-heading">
+                <h4 class="mc-text-center">Comunicaciones Internas</h4>
+                <p class="mc-text-center">Nuestras comunicaciones</p>
+            </div>
+            <ul id="list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete">
+                <li>
+                    <a href="#demo-mail">
+                        <h3>Jefe de almacen de materiales</h3>
+                        <p class="topic"><strong>Banda IX - A</strong></p>
+                        <p>Asegurar la disponibilidad de la información </p>
+                        <p class="ui-li-aside"><strong>EC</strong></p>
+                    </a>
+                    <a href="#" class="delete">Delete</a>
+                    <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-check"></button>
+                </li>
+                <li>
+                    <a href="#demo-mail">
+                        <h3>Jefe de almacen de materiales</h3>
+                        <p class="topic"><strong>Banda IX - A</strong></p>
+                        <p>Asegurar la disponibilidad de la información </p>
+                        <p class="ui-li-aside"><strong>EC</strong></p>
+                    </a>
+                    <a href="#" class="delete">Delete</a>
+                    <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-check"></button>
+                </li>
+            </ul>
+            <div id="confirm" class="ui-content" data-role="popup" data-theme="a">
+                <p id="question">Seguro que quiere eliminar:</p>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="yes" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Si</a>
                     </div>
-                    <div role="main" class="ui-content">
-                        <form id="formulario">
-                                
-                            <h3 style="text-align: center">Bienvenido a la APP de CBN</h3>
-                            <p style="text-align: center">Ingrese sus datos</p>
-                            <label for="txt-number">Legajo</label>
-                            <input type="tel" name="txt-number" id="txt-number" value="">
-                            <label for="txt-password">Contraseña</label>
-                            <input type="password" name="txt-password" id="txt-password" value="">
-                            <fieldset data-role="controlgroup">
-                                <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
-                                <label for="chck-rememberme">Mantener abierta la aplicación</label>
-                            </fieldset>
-                            <input type="submit" value="Entrar" id="botonLogin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">
-                            <!-- <a href="#dlg-invalid-credentials" data-rel="popup" data-transition="pop" data-position-to="window" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Entrar</a> -->
-                            <!-- <p class="mc-top-margin-1-5"><a href="begin-password-reset.html">No puedo ingresar a mi cuenta</a></p>
-                            <div data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
-                                <div role="main" class="ui-content">
-                                    <h3 class="mc-text-danger">Error al ingresar</h3>
-                                    <p>Verifique sus credenciales</p>
-                                    <div class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">Ok</a></div>
-                                </div>
-                            </div> -->
-                        </form>
+                    <div class="ui-block-b">
+                        <a id="cancel" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Cancelar</a>
                     </div>
                 </div>
-                <div data-role="page" id="home">
+            </div>
+        </div><!-- /content -->
+        <div data-role="panel" data-position="left" data-position-fixed="false" data-display="reveal" id="nav-panel" data-theme="c">
 
-                    <div data-role="header">
-                        <h1>Bienvenido</h1>
-                    </div>
+            <div id="profile">
+                <div class="profile_info"></div>
+            </div>
 
-                    <div data-role="content">   
-                        <h2> Bienvenido a la aplicacion </h2>
-                        <h3> Su usuario y password son válidos</h3>
-                    </div>
+            <ul data-role="listview" data-theme="c" data-divider-theme="c" style="margin-top:-16px;" class="nav-search">
 
-                </div>
+                <h3>Navegación</h3>
+                <div class="deco"></div>
 
-            <script type="text/javascript" src="cordova.js"></script>
-            <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-            <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
-            <script type="text/javascript" src="js/index.js"></script>
-        </body>
-    </html>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Inicio</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#page-main-menu">Bienvenido</a></li>
+                        <li><a href="#page-info">Información Personal</a></li>
+                        <!-- <li><a href="#">Calculadora</a></li> -->
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Comunicados</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#page-signin">Busquedas Internas</a></li>
+                        <li><a href="#">Comunicaciones Internas</a></li>
+                        <li><a href="#">Procesos</a></li>
+                        <li><a href="#">Eres Parte</a></li>
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Indicadores People</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#">Dotaciones</a></li>
+                        <li><a href="#">Ejecucion Presupuestaria</a></li>
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Servicios Generales</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#">Menú Comedor</a></li>
+                        <li><a href="#">Sugerencia / Solicitud</a></li>
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Las áreas comunican</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#">Comunicaciones</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- panel content goes here -->
+        </div>
+    </div>
+    <div data-role="page" id="page-info">
+        <div data-role="header" data-theme="c">
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            <!-- <a href="#" data-slidemenu="#slidemenu" data-slideopen="false" data-icon="smico" data-corners="false" data-iconpos="notext">Menu</a> -->
+            <h1><img src="img/logo2.png" width="130" alt=""></h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 class="mc-text-center">Información Personal</h2>
+            <table data-role="table" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Mostrar" data-column-popup-theme="a">
+                <tr>
+                    <th data-priority="1">Legajo</th>
+                    <td id="legajo"></td>
+                </tr>
+                <tr>
+                    <th data-priority="2">Fecha de Ingreso: </th>
+                    <td id="fechaIngreso"></td>
+                </tr>
+                <tr>
+                    <th data-priority="3">Posición: </th>
+                    <td id="posicion"></td>
+                </tr>
+                <tr>
+                    <th data-priority="4">Banda: </th>
+                    <td id="banda"></td>
+                </tr>
+                <tr>
+                    <th data-priority="5">Depende: </th>
+                    <td id="depende"></td>
+                </tr>
+            </table>
+            <h2 class="mc-text-center">Vacaciones</h2>
+            <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+                <thead>
+                    <tr>
+                        <th data-priority="2">Legajo</th>
+                        <th data-priority="3">Nombre</th>
+                        <th data-priority="1"><abbr title="Vacaciones">Vacaciones</abbr></th>
+                    </tr>
+                </thead>
+                <tbody id="vacacionesPropias">
+                    
+                </tbody>
+            </table>
+            <h2 class="mc-text-center">Mi saldo RC IVA</h2>
+            <p class="mc-text-center"><strong>Saldo:</strong> <strong id="rciva"></strong></p>
+        </div><!-- /content -->
+        <div data-role="panel" data-position="left" data-position-fixed="false" data-display="reveal" id="nav-panel" data-theme="c">
+
+            <div id="profile">
+                <div class="profile_info"></div>
+            </div>
+
+            <ul data-role="listview" data-theme="c" data-divider-theme="c" style="margin-top:-16px;" class="nav-search">
+
+                <h3>Navegación</h3>
+                <div class="deco"></div>
+
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Inicio</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#page-main-menu">Bienvenido</a></li>
+                        <li><a href="#page-info">Información Personal</a></li>
+                        <!-- <li><a href="#">Calculadora</a></li> -->
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Comunicados</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#page-signin">Busquedas Internas</a></li>
+                        <li><a href="#">Comunicaciones Internas</a></li>
+                        <li><a href="#">Procesos</a></li>
+                        <li><a href="#">Eres Parte</a></li>
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Indicadores People</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#">Dotaciones</a></li>
+                        <li><a href="#">Ejecucion Presupuestaria</a></li>
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Servicios Generales</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#">Menú Comedor</a></li>
+                        <li><a href="#">Sugerencia / Solicitud</a></li>
+                    </ul>
+                </li>
+                <li data-role="collapsible" data-iconpos="right" data-inset="false">
+                    <h2>Las áreas comunican</h2>
+                    <ul data-role="listview" data-theme="b">
+                        <li><a href="#">Comunicaciones</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- panel content goes here -->
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="lib/fastclick/fastclick.min.js"></script>
+    <script src="js/api-messages.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/signin-controller.js"></script>
+    <script src="js/home-controller.js"></script>
+    <script src="js/info-controller.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
